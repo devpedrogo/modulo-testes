@@ -78,4 +78,18 @@ public class SimpleMathTest {
     assertNotEquals(8.9D, actual);
     assertNotNull(actual);
   }
+
+  @Test
+  void testSquareRoot(){
+    SimpleMath math = new SimpleMath();
+
+    Double number = 9D;
+    Double actual = math.raizQuadrada(number);
+    Double expected = 3D;
+
+    assertEquals(expected, actual, 
+      () -> "Square root of " + number + " should be " + expected);
+    assertNotEquals(8.9D, actual);
+    assertNotNull(actual);
+  }
 }
