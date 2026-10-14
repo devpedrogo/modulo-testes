@@ -1,10 +1,15 @@
 package com.devpedrogo.mudulo_testes;
 
 import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+@DisplayName("Test Math Operations in SimpleMath Class")
 public class SimpleMathTest {
+
   @Test
+  @DisplayName("Test 6.2 + 2 = 8.2")
   void testSum(){
     SimpleMath math = new SimpleMath();
 
@@ -20,6 +25,7 @@ public class SimpleMathTest {
   }
 
   @Test
+  @DisplayName("Test 6.2 - 2 = 4.2")
   void testSubtraction(){
     SimpleMath math = new SimpleMath();
 
@@ -35,6 +41,7 @@ public class SimpleMathTest {
   }
 
   @Test
+  @DisplayName("Test 6.2 * 2 = 12.4")
   void testMultiplication(){
     SimpleMath math = new SimpleMath();
 
@@ -50,6 +57,7 @@ public class SimpleMathTest {
   }
 
   @Test
+  @DisplayName("Test 6.2 / 2 = 3.1")
   void testDivision(){
     SimpleMath math = new SimpleMath();
 
@@ -65,6 +73,16 @@ public class SimpleMathTest {
   }
 
   @Test
+  @DisplayName("Test Division By Zero returns Infinity")
+  void testDivisionByZero() {
+      SimpleMath math = new SimpleMath();
+      Double actual = math.divisao(7.2, 0.0);
+      
+      assertEquals(Double.POSITIVE_INFINITY, actual);
+  }
+
+  @Test
+  @DisplayName("Test (6.2 + 2) / 2 = 4.1")
   void testAverage(){
     SimpleMath math = new SimpleMath();
 
@@ -80,6 +98,7 @@ public class SimpleMathTest {
   }
 
   @Test
+  @DisplayName("Test Square Root of 9 = 3")
   void testSquareRoot(){
     SimpleMath math = new SimpleMath();
 
