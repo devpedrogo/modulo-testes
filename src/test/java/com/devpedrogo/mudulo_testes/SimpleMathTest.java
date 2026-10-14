@@ -63,4 +63,19 @@ public class SimpleMathTest {
     assertNotEquals(8.9D, actual);
     assertNotNull(actual);
   }
+
+  @Test
+  void testAverage(){
+    SimpleMath math = new SimpleMath();
+
+    Double n1 = 6.2D;
+    Double n2 = 2D;
+    Double actual = math.media(n1, n2);
+    Double expected = 4.1D;
+
+    assertEquals(expected, actual, 
+      () -> "Average of " + n1 + " and " + n2 + " should be " + expected);
+    assertNotEquals(8.9D, actual);
+    assertNotNull(actual);
+  }
 }
