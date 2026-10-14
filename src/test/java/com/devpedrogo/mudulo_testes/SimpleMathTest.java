@@ -2,11 +2,40 @@ package com.devpedrogo.mudulo_testes;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 @DisplayName("Test Math Operations in SimpleMath Class")
 public class SimpleMathTest {
+
+  SimpleMath math;
+
+  @BeforeAll
+  static void setup(){
+    System.out.println("Running @BeforeAll method!");
+  }
+
+  @AfterAll
+  static void cleanup(){
+    System.out.println("Running @AfterAll method!");
+  }
+
+  @BeforeEach
+  void beforeEachMethod(){
+
+    math = new SimpleMath();
+    System.out.println("Running @BeforeEach method!");
+  }
+
+  @AfterEach
+  void afterEachMethod(){
+
+    System.out.println("Running @AfterEach method!");
+  }
 
   @Test
   @DisplayName("Test 6.2 + 2 = 8.2")
@@ -14,7 +43,6 @@ public class SimpleMathTest {
 
     // AAA (Triple A) Arrange, Act e Assert
     //Given / Arrange
-    SimpleMath math = new SimpleMath();
 
     Double n1 = 6.2D;
     Double n2 = 2D;
@@ -36,7 +64,6 @@ public class SimpleMathTest {
 
     // AAA (Triple A) Arrange, Act e Assert
     //Given / Arrange
-    SimpleMath math = new SimpleMath();
 
     Double n1 = 6.2D;
     Double n2 = 2D;
@@ -56,7 +83,6 @@ public class SimpleMathTest {
   @Test
   @DisplayName("Test 6.2 * 2 = 12.4")
   void testMultiplication(){
-    SimpleMath math = new SimpleMath();
 
     Double n1 = 6.2D;
     Double n2 = 2D;
@@ -72,7 +98,6 @@ public class SimpleMathTest {
   @Test
   @DisplayName("Test 6.2 / 2 = 3.1")
   void testDivision(){
-    SimpleMath math = new SimpleMath();
 
     Double n1 = 6.2D;
     Double n2 = 2D;
@@ -88,7 +113,7 @@ public class SimpleMathTest {
   @Test
   @DisplayName("Test Division By Zero returns Infinity")
   void testDivisionByZero() {
-      SimpleMath math = new SimpleMath();
+
       Double actual = math.divisao(7.2, 0.0);
       
       assertEquals(Double.POSITIVE_INFINITY, actual);
@@ -97,7 +122,6 @@ public class SimpleMathTest {
   @Test
   @DisplayName("Test (6.2 + 2) / 2 = 4.1")
   void testAverage(){
-    SimpleMath math = new SimpleMath();
 
     Double n1 = 6.2D;
     Double n2 = 2D;
@@ -113,7 +137,6 @@ public class SimpleMathTest {
   @Test
   @DisplayName("Test Square Root of 9 = 3")
   void testSquareRoot(){
-    SimpleMath math = new SimpleMath();
 
     Double number = 9D;
     Double actual = math.raizQuadrada(number);
