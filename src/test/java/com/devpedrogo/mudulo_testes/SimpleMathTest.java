@@ -48,4 +48,19 @@ public class SimpleMathTest {
     assertNotEquals(8.9D, actual);
     assertNotNull(actual);
   }
+
+  @Test
+  void testDivision(){
+    SimpleMath math = new SimpleMath();
+
+    Double n1 = 6.2D;
+    Double n2 = 2D;
+    Double actual = math.divisao(n1, n2);
+    Double expected = 3.1D;
+
+    assertEquals(expected, actual, 
+      () -> n1 + " / " + n2 + " should be " + expected);
+    assertNotEquals(8.9D, actual);
+    assertNotNull(actual);
+  }
 }
