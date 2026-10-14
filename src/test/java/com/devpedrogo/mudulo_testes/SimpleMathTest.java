@@ -11,13 +11,19 @@ public class SimpleMathTest {
   @Test
   @DisplayName("Test 6.2 + 2 = 8.2")
   void testSum(){
+
+    // AAA (Triple A) Arrange, Act e Assert
+    //Given / Arrange
     SimpleMath math = new SimpleMath();
 
     Double n1 = 6.2D;
     Double n2 = 2D;
-    Double actual = math.adicao(n1, n2);
     Double expected = 8.2D;
 
+    //When / Act
+    Double actual = math.adicao(n1, n2);
+
+    //Then / Assert
     assertEquals(expected, actual, 
       () -> n1 + " + " + n2 + " should be " + expected);
     assertNotEquals(8.9D, actual);
@@ -27,12 +33,19 @@ public class SimpleMathTest {
   @Test
   @DisplayName("Test 6.2 - 2 = 4.2")
   void testSubtraction(){
+
+    // AAA (Triple A) Arrange, Act e Assert
+    //Given / Arrange
     SimpleMath math = new SimpleMath();
 
     Double n1 = 6.2D;
     Double n2 = 2D;
+
+    //When / Act
     Double actual = math.subtracao(n1, n2);
     Double expected = 4.2D;
+
+    //Then / Assert
 
     assertEquals(expected, actual, 
       () -> n1 + " - " + n2 + " should be " + expected);
